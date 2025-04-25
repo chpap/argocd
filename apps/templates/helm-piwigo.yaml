@@ -15,4 +15,4 @@ spec:
   source:
     chart: piwigo
     repoURL: https://nicholaswilde.github.io/helm-charts/
-    targetRevision: HEAD
+    targetRevision: 1.0.0
