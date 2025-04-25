@@ -13,6 +13,6 @@ spec:
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
-    path: piwigo
+    chart: piwigo
     repoURL: https://nicholaswilde.github.io/helm-charts/
     targetRevision: HEAD
