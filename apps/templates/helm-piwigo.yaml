@@ -8,6 +8,9 @@ metadata:
 spec:
   syncPolicy:
     automated: {}
+    syncOptions:
+    - CreateNamespace=true
+
   destination:
     namespace: piwigo
     server: {{ .Values.spec.destination.server }}
