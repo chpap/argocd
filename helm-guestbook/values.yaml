@@ -16,17 +16,18 @@ service:
   port: 80
 
 ingress:
-  enabled: false
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
+  enabled: true
+  annotations: 
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/issuer: letsencrypt-staging53
     # kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - chart-example.local
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+    - chart-example.chpap.net
+  tls: 
+    - secretName: chart-example-tls
+      hosts:
+        - chart-example.chpap.net
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
