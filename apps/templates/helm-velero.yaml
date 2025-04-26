@@ -18,7 +18,7 @@ spec:
   source:
     chart: velero
     repoURL: https://vmware-tanzu.github.io/helm-charts
-    targetRevision: 1.0.0
+    targetRevision: 9.0.1
     helm:
       # Values file as block file. This takes precedence over values
       valuesObject:
@@ -44,6 +44,16 @@ spec:
       # - name: "ingress.enabled"
       #  value: "true"
       #  forceString: true # ensures that value is treated as a string
+        podAnnotations:
+          iam.amazonaws.com/role: "arn:aws:iam::250423955575:role/k3s-RoleVelero-staging"
+        initContainers:
+         - name: velero-plugin-for-aws
+           image: velero/velero-plugin-for-aws:v1.10.0
+           imagePullPolicy: IfNotPresent
+           volumeMounts:
+            - mountPath: /target
+              name: plugins
+
 
         configuration:
   # Parameters for the BackupStorageLocation(s). Configure multiple by adding other element(s) to the backupStorageLocation slice.
@@ -53,9 +63,9 @@ spec:
     # a backup storage location will be created with the name "default". Optional.
           - name: "velero_s3"
     # provider is the name for the backup storage location provider.
-            provider:
+            provider: "aws"
     # bucket is the name of the bucket to store backups in. Required.
-            bucket:
+            bucket: "velerok3s-cluster-a7d88b34abfe90dac7c49fe32246175c"
     # caCert defines a base64 encoded CA bundle to use when verifying TLS connections to the provider. Optional.
     # prefix is the directory under which all Velero data should be stored within the bucket. Optional.
             prefix: "velero"
@@ -69,7 +79,7 @@ spec:
     #  region:
     #  s3ForcePathStyle:
     #  s3Url:
-              serviceAccount: "velero-sa"
+    #          serviceAccount: "velero-sa"
     #  kmsKeyId:
     #  resourceGroup:
     #  The ID of the subscription containing the storage account, if different from the cluster’s subscription. (Azure only)
