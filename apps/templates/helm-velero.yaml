@@ -77,7 +77,7 @@ spec:
             accessMode: ReadWrite
             config: 
               region: "eu-north-1"
-              serviceAccount: "velero-sa"
+    #          serviceAccount: "velero-sa"
     #  s3ForcePathStyle:
     #  s3Url:
     #  kmsKeyId:
@@ -97,7 +97,7 @@ spec:
         serviceAccount:
           server:
             create: true
-            name: "velero-serviceaccount"
+            name: "velero-server"
             annotations:
               eks.amazonaws.com/role-arn: "arn:aws:iam::250423955575:role/k3s-RoleVelero-staging"
               eks.amazonaws.com/audience: "sts.amazonaws.com"
