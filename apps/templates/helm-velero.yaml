@@ -44,8 +44,8 @@ spec:
       # - name: "ingress.enabled"
       #  value: "true"
       #  forceString: true # ensures that value is treated as a string
-      podAnnotations:
-          iam.amazonaws.com/role: "arn:aws:iam::250423955575:role/k3s-RoleVelero-staging"
+      #podAnnotations:
+      #    iam.amazonaws.com/role: "arn:aws:iam::250423955575:role/k3s-RoleVelero-staging"
         initContainers:
          - name: velero-plugin-for-aws
            image: velero/velero-plugin-for-aws:v1.10.0
