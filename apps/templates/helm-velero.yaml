@@ -93,11 +93,11 @@ spec:
     # name is the name of the volume snapshot location where snapshots are being taken. Required.
     #- name:
     # provider is the name for the volume snapshot provider.
-            - provider: "aws"
+          - provider: "aws"
     # Additional provider-specific configuration. See link above
     # for details of required/optional fields for your provider.
-              config:   
-                region: "eu-north-1"
+            config:   
+              region: "eu-north-1"
 
         credentials:
   # Whether a secret should be used. Set to false if, for examples:
