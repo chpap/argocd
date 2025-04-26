@@ -44,8 +44,8 @@ spec:
       # - name: "ingress.enabled"
       #  value: "true"
       #  forceString: true # ensures that value is treated as a string
-        podAnnotations:
-          iam.amazonaws.com/role: "arn:aws:iam::250423955575:role/k3s-RoleVelero-staging"
+      #podAnnotations:
+      #    iam.amazonaws.com/role: "arn:aws:iam::250423955575:role/k3s-RoleVelero-staging"
         initContainers:
          - name: velero-plugin-for-aws
            image: velero/velero-plugin-for-aws:v1.10.0
@@ -76,15 +76,15 @@ spec:
     # default to ReadWrite, ReadOnly is used during migrations and restores.
             accessMode: ReadWrite
             config: 
-    #  region:
+              region: "eu-north-1"
+              serviceAccount: "velero-sa"
     #  s3ForcePathStyle:
     #  s3Url:
-    #          serviceAccount: "velero-sa"
     #  kmsKeyId:
     #  resourceGroup:
     #  The ID of the subscription containing the storage account, if different from the cluster’s subscription. (Azure only)
     #  subscriptionId:
     #  storageAccount:
     #  publicUrl:
-    #  Name of the GCP service account to use for this backup storage location. Specify the
+    #  ame of the GCP service account to use for this backup storage location. Specify the
     #  service account here if you want to use workload identity instead of providing the key file.(GCP only)
