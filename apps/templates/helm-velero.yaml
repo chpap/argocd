@@ -97,5 +97,5 @@ spec:
         serviceAccount:
           server:
             create: false
-              name: "velero-sa"
-              #annotations:
+            name: "velero-sa"
+            #annotations:
