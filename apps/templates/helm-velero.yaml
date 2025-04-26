@@ -44,8 +44,8 @@ spec:
       # - name: "ingress.enabled"
       #  value: "true"
       #  forceString: true # ensures that value is treated as a string
-      #podAnnotations:
-      #    iam.amazonaws.com/role: "arn:aws:iam::250423955575:role/k3s-RoleVelero-staging"
+      podAnnotations:
+          iam.amazonaws.com/role: "arn:aws:iam::250423955575:role/k3s-RoleVelero-staging"
         initContainers:
          - name: velero-plugin-for-aws
            image: velero/velero-plugin-for-aws:v1.10.0
@@ -88,3 +88,14 @@ spec:
     #  publicUrl:
     #  ame of the GCP service account to use for this backup storage location. Specify the
     #  service account here if you want to use workload identity instead of providing the key file.(GCP only)
+    #  et up for Velero.
+        credentials:
+  # Whether a secret should be used. Set to false if, for examples:
+  # - using kube2iam or kiam to provide AWS IAM credentials instead of providing the key file. (AWS only)
+  # - using workload identity instead of providing the key file. (Azure/GCP only)
+          useSecret: false
+        serviceAccount:
+          server:
+            create: false
+              name: "velero-sa"
+              #annotations:
