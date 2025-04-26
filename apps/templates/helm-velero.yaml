@@ -99,7 +99,7 @@ spec:
             create: true
             name: "velero-serviceaccount"
             annotations:
-              iam.amazonaws.com/role: "arn:aws:iam::250423955575:role/k3s-RoleVelero-staging"
+              eks.amazonaws.com/role-arn: "arn:aws:iam::250423955575:role/k3s-RoleVelero-staging"
               eks.amazonaws.com/audience: "sts.amazonaws.com"
     # optional: When set to "true", adds AWS_STS_REGIONAL_ENDPOINTS env var
     #   to containers
