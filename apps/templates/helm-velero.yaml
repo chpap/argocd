@@ -96,6 +96,15 @@ spec:
           useSecret: false
         serviceAccount:
           server:
-            create: false
-            name: "velero-sa"
-            #annotations:
+            create: true
+            name: "velero-serviceaccount"
+            annotations:
+              iam.amazonaws.com/role: "arn:aws:iam::250423955575:role/k3s-RoleVelero-staging"
+              eks.amazonaws.com/audience: "sts.amazonaws.com"
+    # optional: When set to "true", adds AWS_STS_REGIONAL_ENDPOINTS env var
+    #   to containers
+              eks.amazonaws.com/sts-regional-endpoints: "true"
+    # optional: Defaults to 86400 for expirationSeconds if not set
+    #   Note: This value can be overwritten if specified in the pod
+    #         annotation as shown in the next step.
+              eks.amazonaws.com/token-expiration: "86400"
