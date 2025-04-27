@@ -25,6 +25,9 @@ spec:
       valuesObject:
         env:
           TZ: "Europe/Athens"
+        proxy:
+          service:
+            type: ClusterIP
         ingress:
           enabled: true
           spec: 
