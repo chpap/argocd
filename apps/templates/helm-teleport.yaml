@@ -21,3 +21,6 @@ spec:
     targetRevision: v17.4.6
     helm:
       # Values file as block file. This takes precedence over values
+      valuesObject:
+        env:
+          TZ: "Europe/Athens"
