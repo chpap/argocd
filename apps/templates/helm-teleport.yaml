@@ -23,6 +23,7 @@ spec:
     helm:
       # Values file as block file. This takes precedence over values
       valuesObject:
+        clusterName: "teleport.chpap.net"
         env:
           TZ: "Europe/Athens"
         proxy:
