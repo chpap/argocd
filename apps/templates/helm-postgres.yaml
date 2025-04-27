@@ -21,6 +21,12 @@ spec:
     repoURL: https://github.com/bitnami/charts.git
     #https://charts.bitnami.com/bitnami
     targetRevision: postgresql/16.6.6
-      #helm:
+    helm:
       # Values file as block file. This takes precedence over values
-      #valuesObject:
+      valuesObject:
+        primary:
+          service:
+    ## @param primary.service.type Kubernetes Service type
+    ##
+            type: ClusterIP
+    ## @param primary.service.ports.postgresql PostgreSQL service port
