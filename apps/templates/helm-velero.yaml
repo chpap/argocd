@@ -67,7 +67,7 @@ spec:
             bucket: "velerok3s-cluster-a7d88b34abfe90dac7c49fe32246175c"
     # caCert defines a base64 encoded CA bundle to use when verifying TLS connections to the provider. Optional.
     # prefix is the directory under which all Velero data should be stored within the bucket. Optional.
-            prefix: "velero"
+            prefix: "backup"
     # default indicates this location is the default backup storage location. Optional.
             default: true
     # validationFrequency defines how frequently Velero should validate the object storage. Optional.
