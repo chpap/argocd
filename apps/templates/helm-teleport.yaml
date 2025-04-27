@@ -18,35 +18,6 @@ spec:
   source:
     path: examples/chart/teleport-cluster
     repoURL: https://github.com/gravitational/teleport.git
-    targetRevision: HEAD
+    targetRevision: v17.4.6
     helm:
       # Values file as block file. This takes precedence over values
-      valuesObject:
-        env:
-          TZ: "Europe/Athens"
-        ingress:
-          enabled: true
-          spec: 
-             ingressClassName: nginx 
-             hosts:
-               - host: teleport.chpap.net
-                 paths:
-                   - path: /
-                     pathType: Prefix
-             annotations:
-               #kubernetes.io/ingress.class: nginx
-               cert-manager.io/cluster-issuer: letsencrypt-staging53
-               #            kubernetes.io/tls-acme: "true"
-             labels: {}
-             tls:
-               - secretName: piwigo-tls
-                 hosts:
-                   - teleport.chpap.net
-
-      # Extra parameters to set (same as setting through values.yaml, but these take precedence)
-      #      parameters:
-      # - name: "ingress.enabled"
-      #  value: "true"
-      #  forceString: true # ensures that value is treated as a string
-      #  mariadb.mariadb.svc.cluster.local
-
