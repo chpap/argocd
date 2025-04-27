@@ -16,7 +16,7 @@ spec:
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
-    path: teleport-cluster
+    chart: teleport-cluster
       #repoURL: https://github.com/gravitational/teleport.git
     repoURL: https://charts.releases.teleport.dev
     targetRevision: 17.4.6
