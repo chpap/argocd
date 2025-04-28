@@ -30,10 +30,17 @@ spec:
         service:
           type: ClusterIP
         proxy:
-          annotations:
-            ingress:
+          highAvailability:
+            certManager:
+              enabled: true
+              issuerName: "letsencrypt-prod53"
+    # Kind of Issuer that cert-manager should look for.
+    # This defaults to 'Issuer' to keep everything contained within the teleport namespace.
+              issuerKind: ClusterIssuer
+                #      annotations:
+                #ingress:
                #kubernetes.io/ingress.class: nginx
-               cert-manager.io/cluster-issuer: letsencrypt-prod53
+               #cert-manager.io/cluster-issuer: letsencrypt-prod53
                #            kubernetes.io/tls-acme: "true"
         ingress:
           enabled: true
