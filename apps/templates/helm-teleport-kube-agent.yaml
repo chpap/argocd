@@ -12,7 +12,7 @@ spec:
     - CreateNamespace=true
 
   destination:
-    namespace: teleport-kube-agent
+    namespace: teleport
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
