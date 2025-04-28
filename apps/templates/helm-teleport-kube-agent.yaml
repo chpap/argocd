@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: teleport-kube-agent
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true
+
+  destination:
+    namespace: teleport-kube-agent
+    server: {{ .Values.spec.destination.server }}
+  project: default
+  source:
+    chart: teleport-kube-agent
+      #repoURL: https://github.com/gravitational/teleport.git
+    repoURL: https://charts.releases.teleport.dev
+    targetRevision: 17.4.6
+    helm:
+      # Values file as block file. This takes precedence over values
+      valuesObject:
+        #annotations:
+        #  serviceAccount:
+        #      eks.amazonaws.com/role-arn: "arn:aws:iam::250423955575:role/k3s-RoleVelero-staging"
+        #      #eks.amazonaws.com/audience: "sts.amazonaws.com"
+        env:
+          TZ: "Europe/Athens"
+        proxyAddr: "teleport.chpap.net"
+
