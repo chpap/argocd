@@ -34,7 +34,7 @@ spec:
           highAvailability:
             certManager:
               enabled: true
-              issuerName: "letsencrypt-staging53"
+              issuerName: "letsencrypt-prod53"
     # Kind of Issuer that cert-manager should look for.
     # This defaults to 'Issuer' to keep everything contained within the teleport namespace.
               issuerKind: ClusterIssuer
