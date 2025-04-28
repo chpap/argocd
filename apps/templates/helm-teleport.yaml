@@ -24,6 +24,10 @@ spec:
       # Values file as block file. This takes precedence over values
       valuesObject:
         authentication:
+        annotations:
+          serviceAccount:
+              eks.amazonaws.com/role-arn: "arn:aws:iam::250423955575:role/k3s-RoleVelero-staging"
+              #eks.amazonaws.com/audience: "sts.amazonaws.com"
           type: github
         clusterName: "teleport.chpap.net"
         env:
