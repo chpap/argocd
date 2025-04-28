@@ -29,6 +29,6 @@ spec:
         #      #eks.amazonaws.com/audience: "sts.amazonaws.com"
         env:
           TZ: "Europe/Athens"
-        proxyAddr: "teleport.chpap.net:443"
+        proxyAddr: "teleport.chpap.net"
         kubeClusterName: "k3s-cluster"
 
