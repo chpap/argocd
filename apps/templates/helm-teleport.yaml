@@ -24,7 +24,7 @@ spec:
       # Values file as block file. This takes precedence over values
       valuesObject:
         authentication:
-          type: "github"
+          type: github
         clusterName: "teleport.chpap.net"
         env:
           TZ: "Europe/Athens"
