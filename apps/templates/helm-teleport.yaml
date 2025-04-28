@@ -26,9 +26,9 @@ spec:
         clusterName: "teleport.chpap.net"
         env:
           TZ: "Europe/Athens"
-        proxy:
-          service:
-            type: ClusterIP
+        proxyListenerMode: "multiplex"
+        service:
+          type: ClusterIP
         ingress:
           enabled: true
           spec: 
