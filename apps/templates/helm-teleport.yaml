@@ -26,7 +26,7 @@ spec:
         clusterName: "teleport.chpap.net"
         env:
           TZ: "Europe/Athens"
-        proxyProtocol: "on"
+        proxyProtocol: "off"
         proxyListenerMode: "multiplex"
         service:
           type: ClusterIP
@@ -34,7 +34,7 @@ spec:
           highAvailability:
             certManager:
               enabled: true
-              issuerName: "letsencrypt-prod53"
+              issuerName: "letsencrypt-staging53"
     # Kind of Issuer that cert-manager should look for.
     # This defaults to 'Issuer' to keep everything contained within the teleport namespace.
               issuerKind: ClusterIssuer
@@ -43,8 +43,8 @@ spec:
               nginx.ingress.kubernetes.io/backend-protocol: "HTTPS" 
               #nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
 
-              kubernetes.io/ingress.class: nginx
-              cert-manager.io/cluster-issuer: letsencrypt-prod53
+              #kubernetes.io/ingress.class: nginx
+              #cert-manager.io/cluster-issuer: letsencrypt-prod53
               #            kubernetes.io/tls-acme: "true"
         ingress:
           enabled: true
