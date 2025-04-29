@@ -31,37 +31,36 @@ spec:
           type: github
         clusterName: "teleport.chpap.net"
         chartMode: aws
-
         aws:
-  # The AWS region where the DynamoDB tables are located.
+# The AWS region where the DynamoDB tables are located.
           region: "eu-north-1"
-  # The DynamoDB table name to use for backend storage. Teleport will attempt to create this table automatically if it does not exist.
-  # The container will need an appropriately-provisioned IAM role with permissions to create DynamoDB tables.
+# The DynamoDB table name to use for backend storage. Teleport will attempt to create this table automatically if it does not exist.
+# The container will need an appropriately-provisioned IAM role with permissions to create DynamoDB tables.
           backendTable: "teleport.chpap.net"
-  # The DynamoDB table name to use for audit log storage. Teleport will attempt to create this table automatically if it does not exist.
-  # The container will need an appropriately-provisioned IAM role with permissions to create DynamoDB tables.
-  # This MUST NOT be the same table name as used for 'backendTable' as the schemas are different.
-  #
-  # If you are using the Athena backend, you don't need to set this value.
-  # If you set this value, audit logs will be sent both to the Athena and DynamoDB
-  # backends, this is useful when migrating backends.
-  # If both `aws.athenaURL` and `aws.auditLogTable` (DynamoDB) are set, the
-  # `aws.auditLogPrimaryBackend` value configures which backend is used for querying.
-  # Teleport queries the audit backend to display the audit log in the web UI, export events
-  # using the audit log collector, or perform any action that needs to inspect past audit events.
+# The DynamoDB table name to use for audit log storage. Teleport will attempt to create this table automatically if it does not exist.
+# The container will need an appropriately-provisioned IAM role with permissions to create DynamoDB tables.
+# This MUST NOT be the same table name as used for 'backendTable' as the schemas are different.
+#
+# If you are using the Athena backend, you don't need to set this value.
+# If you set this value, audit logs will be sent both to the Athena and DynamoDB
+# backends, this is useful when migrating backends.
+# If both `aws.athenaURL` and `aws.auditLogTable` (DynamoDB) are set, the
+# `aws.auditLogPrimaryBackend` value configures which backend is used for querying.
+# Teleport queries the audit backend to display the audit log in the web UI, export events
+# using the audit log collector, or perform any action that needs to inspect past audit events.
           auditLogTable: "teleport.chpap.net-events"
-  # Whether to mirror audit log entries to stdout in JSON format (useful for external log collectors)
+# Whether to mirror audit log entries to stdout in JSON format (useful for external log collectors)
           auditLogMirrorOnStdout: true
-  # auditLogPrimaryBackend controls which backend is used for queries when multiple
-  # audit backends are enabled. This setting has no effect when a single audit
-  # log backend is enabled.This setting is used when migrating from DynamoDB to
-  # Athena.
-  #
-  # Possible values are `dynamo` and `athena`.
+# auditLogPrimaryBackend controls which backend is used for queries when multiple
+# audit backends are enabled. This setting has no effect when a single audit
+# log backend is enabled.This setting is used when migrating from DynamoDB to
+# Athena.
+#
+# Possible values are `dynamo` and `athena`.
           auditLogPrimaryBackend: "dynamo"
-  # athenaURL contains the Athena audit log backend configuration
-  # When this value is set, Teleport will export events to the Athena audit backend.
-  #
+# athenaURL contains the Athena audit log backend configuration
+# When this value is set, Teleport will export events to the Athena audit backend.
+#
         env:
           TZ: "Europe/Athens"
         proxyProtocol: "off"
