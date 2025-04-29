@@ -31,7 +31,7 @@ spec:
           TZ: "Europe/Athens"
         proxyAddr: "teleport.chpap.net:443"
         kubeClusterName: "k3s-cluster"
-        roles: kube,app,db,discovery
+        roles: kube,app,discovery
         joinParams:
   # joinParams.method(string) -- controls which join method will be used by the
   # instance to join the Teleport cluster.
