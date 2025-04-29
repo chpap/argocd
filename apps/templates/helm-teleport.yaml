@@ -83,6 +83,9 @@ spec:
           enabled: true
           spec: 
              ingressClassName: nginx 
+        operator:
+  # Set enabled to true to add the Kubernetes Teleport Operator
+          enabled: true
 
       # Extra parameters to set (same as setting through values.yaml, but these take precedence)
       #      parameters:

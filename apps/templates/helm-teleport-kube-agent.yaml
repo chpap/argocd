@@ -31,4 +31,22 @@ spec:
           TZ: "Europe/Athens"
         proxyAddr: "teleport.chpap.net:443"
         kubeClusterName: "k3s-cluster"
+        roles: kube,app,db,discovery
+        joinParams:
+  # joinParams.method(string) -- controls which join method will be used by the
+  # instance to join the Teleport cluster.
+  #
+  # See [the join method reference](../../reference/join-methods.mdx) for the list of possible
+  # values, the implications of each join method, and guides to set up each method.
+  #
+  # Common join-methods for the `teleport-kube-agent` are:
+  # - `token`: the most basic one, with regular ephemeral secret tokens
+  # - `kubernetes`: either the `in-cluster` variant (if the agent runs in the
+  #   same Kubernetes cluster as the `teleport-cluster` chart) or the `JWKS`
+  #   variant (works in every Kubernetes cluster, regardless of the Teleport Auth
+  #   Service location).
+         method: "kubernetes"
+         #tokenName: "teleport-kube-agent"
+
+
 
