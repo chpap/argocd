@@ -61,6 +61,7 @@ spec:
 # athenaURL contains the Athena audit log backend configuration
 # When this value is set, Teleport will export events to the Athena audit backend.
 #
+          sessionRecordingBucket: "chpap-paplab-teleport-log"
         env:
           TZ: "Europe/Athens"
         proxyProtocol: "off"
