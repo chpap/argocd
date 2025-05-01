@@ -16,8 +16,8 @@ spec:
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
-    chart: phpmyadmin
-    repoURL: https://charts.bitnami.com/bitnami
+    path: bitnami/phpmyadmin
+    repoURL: https://github.com/bitnami/charts.git
     targetRevision: 18.1.6
       #helm:
       # Values file as block file. This takes precedence over values
