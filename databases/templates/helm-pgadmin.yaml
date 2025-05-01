@@ -19,7 +19,10 @@ spec:
     chart: pgadmin4
     repoURL: https://helm.runix.net/
     targetRevision: 1.42.0
-      #helm:
+      helm:
+        valuesObject:
+          persistentVolume:
+            enabled: false
       # Values file as block file. This takes precedence over values
       # Extra parameters to set (same as setting through values.yaml, but these take precedence)
       #      parameters:
