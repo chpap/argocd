@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: pgadmin
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true
+
+  destination:
+    namespace: postgres
+    server: {{ .Values.spec.destination.server }}
+  project: default
+  source:
+    chart: pgadmin4
+    repoURL: https://helm.runix.net/
+    targetRevision: 1.42.0
+      #helm:
+      # Values file as block file. This takes precedence over values
+      # Extra parameters to set (same as setting through values.yaml, but these take precedence)
+      #      parameters:
+      # - name: "ingress.enabled"
+      #  value: "true"
+      #  forceString: true # ensures that value is treated as a string
+
