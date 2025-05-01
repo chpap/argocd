@@ -27,9 +27,9 @@ spec:
         tls:
   ## @param tls.enabled Enable TLS traffic support
           enabled: false
-        pgHbaConfiguration: |-
-            local all all trust
-            host all all 0.0.0.0/0 trust
+            #pgHbaConfiguration: |-
+            #local all all trust
+            #host all all 0.0.0.0/0 trust
             #      host    postgres        all             192.168.12.10/32        scram-sha-256
         primary:
           service:
