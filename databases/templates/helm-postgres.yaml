@@ -24,6 +24,10 @@ spec:
     helm:
       # Values file as block file. This takes precedence over values
       valuesObject:
+        tls:
+  ## @param tls.enabled Enable TLS traffic support
+  ##
+          enabled: true
         primary:
           service:
     ## @param primary.service.type Kubernetes Service type
