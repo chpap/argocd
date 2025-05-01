@@ -18,7 +18,7 @@ spec:
   source:
     path: bitnami/phpmyadmin
     repoURL: https://github.com/bitnami/charts.git
-    targetRevision: 18.1.6
+    targetRevision: phpmyadmin/18.1.6
       #helm:
       # Values file as block file. This takes precedence over values
       # Extra parameters to set (same as setting through values.yaml, but these take precedence)
