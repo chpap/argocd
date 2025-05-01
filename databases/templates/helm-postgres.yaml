@@ -26,8 +26,7 @@ spec:
       valuesObject:
         tls:
   ## @param tls.enabled Enable TLS traffic support
-  ##
-          enabled: true
+          enabled: false
         primary:
           service:
     ## @param primary.service.type Kubernetes Service type
