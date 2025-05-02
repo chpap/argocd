@@ -37,8 +37,8 @@ spec:
           ingressClassName: nginx
           annotations: 
              cert-manager.io/cluster-issuer: letsencrypt-staging53
-             nginx.ingress.kubernetes.io/configuration-snippet: |
-                proxy_set_header X-Script-Name /pgadmin4;
+    #         nginx.ingress.kubernetes.io/configuration-snippet: |
+    # proxy_set_header X-Script-Name /pgadmin4;
     # If TLS is terminated elsewhere (on external load balancer), you may want
     # to redirect to `https://` URL scheme along with rewriting URL path if
     # `ingress.hosts.paths` is set. This is specific for image version >= 4.22.
