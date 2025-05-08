@@ -50,7 +50,7 @@ spec:
              #- name: PGADMIN_CONFIG_X_XSS_PROTECTION 
              #value: "0"
         ingress:
-          enabled: true
+          enabled: false
           ingressClassName: nginx
           annotations: 
              cert-manager.io/cluster-issuer: letsencrypt-staging53
