@@ -20,8 +20,8 @@ data:
     #PROXY_X_PORT_COUNT = 4
     # Number of values to trust for X-Forwarded-Prefix.
     #PROXY_X_PREFIX_COUNT = 4
-    #DEBUG = True
-    #CONSOLE_LOG_LEVEL = logging.DEBUG
+    DEBUG = True
+    CONSOLE_LOG_LEVEL = logging.DEBUG
     OAUTH2_AUTO_CREATE_USER = True
     OAUTH2_CONFIG = [
       {
