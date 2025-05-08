@@ -6,6 +6,7 @@ metadata:
 data:
   config_local.py: |-
     import os
+    import logging
     
     MASTER_PASSWORD_REQUIRED = True
     AUTHENTICATION_SOURCES = ['oauth2', 'internal']
