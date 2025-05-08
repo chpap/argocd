@@ -47,6 +47,8 @@ spec:
             value: "3"
           - name: PGADMIN_CONFIG_X_XSS_PROTECTION 
             value: "0"
+          - name: PGADMIN_CONFIG_DEBUG
+            value: "true"
         ingress:
           enabled: false
           ingressClassName: nginx
