@@ -29,8 +29,8 @@ spec:
             subPath: config_local.py
             mountPath: "/pgadmin4/config_local.py"
             readOnly: true
-       envVarsFromSecrets:
-         - pgadmin4-oauth2-secret
+        envVarsFromSecrets:
+          - pgadmin4-oauth2-secret
 
         persistentVolume:
           enabled: false
