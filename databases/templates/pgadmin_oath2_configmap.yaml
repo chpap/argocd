@@ -20,7 +20,10 @@ data:
     #PROXY_X_PORT_COUNT = 4
     # Number of values to trust for X-Forwarded-Prefix.
     #PROXY_X_PREFIX_COUNT = 4
-    WTF_CSRF_HEADERS = ['X-pgA-CSRFToken', 'X-CSRFToken', 'X-CSRF-Token']
+    ENHANCED_COOKIE_PROTECTION=False
+    WTF_CSRF_CHECK_DEFAULT=False
+    WTF_CSRF_ENABLED=False
+    #WTF_CSRF_HEADERS = ['X-pgA-CSRFToken', 'X-CSRFToken', 'X-CSRF-Token']
     DEBUG = True
     CONSOLE_LOG_LEVEL = logging.DEBUG
     OAUTH2_AUTO_CREATE_USER = True
