@@ -39,6 +39,12 @@ spec:
             value: "4"
           - name: PGADMIN_CONFIG_SERVER_MODE
             value: "False"
+          - name: PGADMIN_ENHANCED_COOKIE_PROTECTION
+            value: "False"
+          - name: PGADMIN_WTF_CSRF_CHECK_DEFAULT
+            value: "False"
+#          - name: PGADMIN_WTF_CSRF_ENABLED
+#            value: "False"
 #          - name: PGADMIN_CONFIG_PROXY_X_FOR_COUNT
 #            value: "3"
 #          - name: PGADMIN_CONFIG_PROXY_X_HOST_COUNT
