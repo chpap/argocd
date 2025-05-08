@@ -36,7 +36,7 @@ spec:
           enabled: false
         envVarsExtra:
           - name: PGADMIN_CONFIG_PROXY_X_PROTO_COUNT
-            value: "3"
+            value: "4"
           - name: PGADMIN_CONFIG_SERVER_MODE
             value: "False"
 #          - name: PGADMIN_CONFIG_PROXY_X_FOR_COUNT
