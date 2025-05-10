@@ -27,11 +27,11 @@ spec:
             requests:
               memory: "128Mi"
               cpu: "100m"
-#            ephemeral-storage: "50Mi"
+              ephemeral-storage: "50Mi"
             limits:
               memory: "192Mi"
               cpu: "150m"
-#            ephemeral-storage: "2Gi"
+              ephemeral-storage: "2Gi"
       #helm:
       # Values file as block file. This takes precedence over values
       # Extra parameters to set (same as setting through values.yaml, but these take precedence)
