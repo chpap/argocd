@@ -32,11 +32,3 @@ spec:
               memory: "192Mi"
               cpu: "150m"
 #              ephemeral-storage: "2Gi"
-      #helm:
-      # Values file as block file. This takes precedence over values
-      # Extra parameters to set (same as setting through values.yaml, but these take precedence)
-      #      parameters:
-      # - name: "ingress.enabled"
-      #  value: "true"
-      #  forceString: true # ensures that value is treated as a string
-
