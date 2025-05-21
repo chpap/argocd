@@ -36,15 +36,15 @@ spec:
               paths:
                 - path: /
                   pathType: Prefix
-          annotations:
-            kubernetes.io/ingress.class: nginx
-            cert-manager.io/cluster-issuer: letsencrypt-prod53 
+            #annotations:
+            #kubernetes.io/ingress.class: nginx
+            #cert-manager.io/cluster-issuer: letsencrypt-prod53 
             #            kubernetes.io/tls-acme: "true"
           labels: {}
-          tls:
-            - secretName: piwigo-tls
-              hosts:
-                - piwigo.chpap.net
+          #tls:
+          #  - secretName: piwigo-tls
+          #    hosts:
+          #      - piwigo.chpap.net
 
       # Extra parameters to set (same as setting through values.yaml, but these take precedence)
       #      parameters:
